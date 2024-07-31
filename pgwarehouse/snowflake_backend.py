@@ -93,7 +93,7 @@ class SnowflakeBackend(Backend):
         if pgtype.startswith("smallint"):
             return "SMALLINT"
         if pgtype.startswith("numeric") or pgtype.startswith("real") or pgtype.startswith("double"):
-            return "NUMERIC"
+            return "FLOAT"
         if pgtype == 'year':
             return "String"
         logger.warn(f"Warning unknown Postgres type {pgtype}, falling back to String")
